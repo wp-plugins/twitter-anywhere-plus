@@ -5,7 +5,7 @@
 Plugin Name: Twitter @Anywhere Plus
 Plugin URI: http://www.ngeeks.com/proyectos/twitter-anywhere-plus/
 Description: This plugin allows you to easily add Twitter @Anywhere to your blog, enabling the @Anywhere features.
-Version: 1.0
+Version: 1.1
 Author: GeekRMX
 Author URI: http://www.ngeeks.com/
 License: GPLv3

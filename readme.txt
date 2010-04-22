@@ -22,6 +22,7 @@ Languages:
 
 * English (en_US)
 * Spanish (es_ES)
+* Belorussian (be_BY)
 
 In order to use @Anywhere, you must first register your blog for a free API key with Twitter. You can do so at the following URL: http://dev.twitter.com/anywhere/apps/new
 
@@ -53,18 +54,25 @@ http://dev.twitter.com/anywhere/apps/new
 
 == Changelog ==
 
+= 1.1 =
+* Added Belorussian translation by Marcis G. ([PC.DE](http://pc.de))
+
 = 1.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1 =
+Added Belorussian translation.
 
 = 1.0 =
 Initial release.
 
 == Translations ==
 
-* English (en_US)
+* English (en_US) [default]
 * Spanish (es_ES)
+* Belorussian (be_BY) - [Marcis G.](http://pc.de)
 
 You can help translating the plugin into your language.
 Use the `tap-default.po` file included with the plugin.

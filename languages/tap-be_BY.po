@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Twitter @Anywhere Plus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-21 18:36+0100\n"
+"PO-Revision-Date: 2010-04-22 12:38+0300\n"
+"Last-Translator: FatCow <zhr@tut.by>\n"
+"Language-Team: Marcis G. <by.marcis@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Belarusian\n"
+"X-Poedit-Country: BELARUS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: twitter-anywhere-plus.php:77
+msgid "Options saved."
+msgstr "Опцыі захаваны."
+
+#: twitter-anywhere-plus.php:94
+msgid "In order to use @Anywhere, you must first register your blog for a free API key with Twitter.<br />You can do so at the following URL:"
+msgstr "Для таго, каб выкарыстоўваць @Anywhere, вы павінны спачатку зарэгістраваць свой блог для атрымання бясплатнага ключа API з Twitter. <br /> Гэта можна зрабіць па наступным адрасе:"
+
+#: twitter-anywhere-plus.php:95
+msgid "Your @Anywhere API key:"
+msgstr "Ваш @Anywhere API ключ:"
+
+#: twitter-anywhere-plus.php:96
+msgid "@Anywhere features"
+msgstr "@Anywhere магчымасці"
+
+#: twitter-anywhere-plus.php:98
+msgid "Auto-linkification of @usernames"
+msgstr "Аўта-linkification @usernames"
+
+#: twitter-anywhere-plus.php:99
+msgid "Turn Twitter usernames into links."
+msgstr "Уключыць імёны карыстачоў Twitter у спасылкі."
+
+#: twitter-anywhere-plus.php:101
+msgid "Hovercards"
+msgstr "Hovercards"
+
+#: twitter-anywhere-plus.php:102
+msgid "Show hovercard when you move the mouse over a Twitter username."
+msgstr "Паказаць hovercard, калі вы перасоўваеце паказальнік мышы на імя карыстача Twitter."
+
+#: twitter-anywhere-plus.php:104
+msgid "Follow button"
+msgstr "Кнопка Follow"
+
+#: twitter-anywhere-plus.php:105
+msgid "Show a follow button where you want it to be placed."
+msgstr "Паказаць кнопку button там, дзе яна павінна знаходзіцца."
+
+#: twitter-anywhere-plus.php:108
+msgid "Twitter username:"
+msgstr "Імя карыстача Twitter:"
+
+#: twitter-anywhere-plus.php:112
+#: twitter-anywhere-plus.php:119
+#: twitter-anywhere-plus.php:121
+msgid "DOM element:"
+msgstr "DOM элемент:"
+
+#: twitter-anywhere-plus.php:116
+msgid "The <em>id</em> or <em>class</em> of the element (div, p) where the button must be inserted."
+msgstr "<em>id</em> ці <em>клас</em> элемента (div, p), дзе кнопка павінна быць усталявана."
+
+#: twitter-anywhere-plus.php:117
+msgid "Example:"
+msgstr "Прыклад:"
+
+#: twitter-anywhere-plus.php:118
+msgid "You can create a Text widget with the following code inside:"
+msgstr "Вы можаце стварыць тэкставы виджет з наступным кодам усярэдзіне:"
+
+#: twitter-anywhere-plus.php:120
+msgid "You can also use classes:"
+msgstr "Вы таксама можаце выкарыстоўваць класы:"
+
+#: twitter-anywhere-plus.php:127
+msgid "Save changes"
+msgstr "Захаваць змены"
+
+#: twitter-anywhere-plus.php:130
+msgid "This plugin has been developed by <strong>GeekRMX</strong>."
+msgstr "Гэта ўбудова была распрацаваны <strong>GeekRMX</strong>."
+
+#: twitter-anywhere-plus.php:132
+msgid "Website:"
+msgstr "Сайт:"
+

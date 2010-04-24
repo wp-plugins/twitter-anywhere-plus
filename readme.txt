@@ -1,6 +1,6 @@
 === Twitter @Anywhere Plus ===
 Contributors: GeekRMX
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contacto%40ngeeks%2ecom&lc=ES&item_name=Twitter%20%40Anywhere%20Plus&item_number=WordPress%20Plugin&cn=Your%20name%20and%20website%3f&no_shipping=1&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40ngeeks%2ecom&lc=ES&item_name=Twitter%20%40Anywhere%20Plus&item_number=WordPress%20Plugin&cn=Your%20name%20and%20website%3f&no_shipping=1&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: twitter, @anywhere, api, anywhere, javascript, social, widget, sidebar, tweet
 Requires at least: 2.7
 Tested up to: 3.0
@@ -54,6 +54,9 @@ http://dev.twitter.com/anywhere/apps/new
 
 == Changelog ==
 
+= 1.2 =
+* Bugfix: newline before `<?php` (PHP warning)
+
 = 1.1 =
 * Added Belorussian translation by Marcis G. ([PC.DE](http://pc.de))
 
@@ -61,6 +64,9 @@ http://dev.twitter.com/anywhere/apps/new
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2 =
+Bugfix: newline before `<?php` (PHP warning)
 
 = 1.1 =
 Added Belorussian translation.

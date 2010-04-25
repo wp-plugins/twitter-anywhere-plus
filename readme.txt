@@ -15,8 +15,9 @@ This plugin allows you to easily add **Twitter @Anywhere** to your blog, enablin
 * Auto-linkification of @usernames
 * Hovercards
 * Follow buttons
+* Tweet Box
 
-You can enable or disable each function from the plugin settings page.
+You can enable and configure each function from the plugin settings page.
 
 Languages:
 
@@ -34,7 +35,8 @@ In order to use @Anywhere, you must first register your blog for a free API key 
 
 1. Auto-linkification of @usernames & Hovercards
 2. Follow buttons
-3. Options page
+3. Tweet Box
+4. Options page
 
 == Installation ==
 
@@ -54,6 +56,9 @@ http://dev.twitter.com/anywhere/apps/new
 
 == Changelog ==
 
+= 1.3 =
+* Added Tweet Box feature.
+
 = 1.2 =
 * Bugfix: newline before `<?php` (PHP warning)
 
@@ -62,17 +67,6 @@ http://dev.twitter.com/anywhere/apps/new
 
 = 1.0 =
 * Initial release.
-
-== Upgrade Notice ==
-
-= 1.2 =
-Bugfix: newline before `<?php` (PHP warning)
-
-= 1.1 =
-Added Belorussian translation.
-
-= 1.0 =
-Initial release.
 
 == Translations ==
 

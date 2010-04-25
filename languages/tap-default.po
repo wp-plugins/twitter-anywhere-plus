@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Twitter @Anywhere Plus 1.0\n"
+"Project-Id-Version: Twitter @Anywhere Plus 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-21 18:36+0100\n"
-"PO-Revision-Date: 2010-04-21 18:36+0100\n"
+"POT-Creation-Date: 2010-04-25 15:05+0100\n"
+"PO-Revision-Date: 2010-04-25 15:05+0100\n"
 "Last-Translator: Jose Antonio Ramirez <geekrmx@ngeeks.com>\n"
 "Language-Team: nGeeks.com <contacto@ngeeks.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: twitter-anywhere-plus.php:77
+#: twitter-anywhere-plus.php:70
 msgid "Options saved."
 msgstr ""
 
@@ -82,15 +82,49 @@ msgstr ""
 msgid "You can also use classes:"
 msgstr ""
 
+#: twitter-anywhere-plus.php:126
+msgid "Tweet Box"
+msgstr ""
+
 #: twitter-anywhere-plus.php:127
-msgid "Save changes"
+msgid "Show a tweet box below your posts."
 msgstr ""
 
 #: twitter-anywhere-plus.php:130
+msgid "Width:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:131
+#: twitter-anywhere-plus.php:135
+#: twitter-anywhere-plus.php:139
+msgid "Default:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:134
+msgid "Height:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:138
+msgid "Label:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:142
+msgid "Content:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:146
+msgid "Show post title and short URL instead of a custom text."
+msgstr ""
+
+#: twitter-anywhere-plus.php:151
+msgid "Save changes"
+msgstr ""
+
+#: twitter-anywhere-plus.php:154
 msgid "This plugin has been developed by <strong>GeekRMX</strong>."
 msgstr ""
 
-#: twitter-anywhere-plus.php:132
+#: twitter-anywhere-plus.php:156
 msgid "Website:"
 msgstr ""
 

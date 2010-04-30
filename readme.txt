@@ -1,7 +1,7 @@
 === Twitter @Anywhere Plus ===
 Contributors: GeekRMX
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40ngeeks%2ecom&lc=ES&item_name=Twitter%20%40Anywhere%20Plus&item_number=WordPress%20Plugin&cn=Your%20name%20and%20website%3f&no_shipping=1&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
-Tags: twitter, @anywhere, api, anywhere, javascript, social, widget, sidebar, tweet
+Tags: lightbox, button, retweet, tweet, sidebar, widget, social, javascript, anywhere, api, @anywhere, twitter
 Requires at least: 2.7
 Tested up to: 3.0
 Stable tag: trunk
@@ -14,8 +14,9 @@ This plugin allows you to easily add **Twitter @Anywhere** to your blog, enablin
 
 * Auto-linkification of @usernames
 * Hovercards
-* Follow buttons
+* Follow button
 * Tweet Box
+* Retweet button (Tweet Box with Lightbox effect) [[screenshot](http://wordpress.org/extend/plugins/twitter-anywhere-plus/screenshots/)]
 
 You can enable and configure each function from the plugin settings page.
 
@@ -33,10 +34,9 @@ In order to use @Anywhere, you must first register your blog for a free API key 
 
 == Screenshots ==
 
-1. Auto-linkification of @usernames & Hovercards
-2. Follow buttons
-3. Tweet Box
-4. Options page
+1. Retweet button (Tweet Box with Lightbox effect)
+2. Auto-linkification of @usernames, Hovercards, Retweet button, Follow button, Tweet Box
+3. Settings page
 
 == Installation ==
 
@@ -55,6 +55,9 @@ http://dev.twitter.com/anywhere
 http://dev.twitter.com/anywhere/apps/new
 
 == Changelog ==
+
+= 1.4 =
+* Added Retweet button feature (Tweet Box with Lightbox effect).
 
 = 1.3 =
 * Added Tweet Box feature.

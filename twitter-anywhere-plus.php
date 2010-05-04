@@ -5,7 +5,7 @@
 Plugin Name: Twitter @Anywhere Plus
 Plugin URI: http://www.ngeeks.com/proyectos/twitter-anywhere-plus/
 Description: This plugin allows you to easily add Twitter @Anywhere to your blog, enabling the @Anywhere features.
-Version: 1.4
+Version: 1.5
 Author: GeekRMX
 Author URI: http://www.ngeeks.com/
 License: GPLv3
@@ -72,6 +72,7 @@ function twitter_anywhere_plus_options() {
 		update_option('tap_retweet_label', $_POST['retweet_label']);
 		update_option('tap_retweet_content', $_POST['retweet_content']);
 		if(isset($_POST['retweet_ts'])) { update_option('tap_retweet_ts', 'yes'); } else { update_option('tap_retweet_ts', 'no'); }
+		update_option('tap_retweet_bird', $_POST['retweet_bird']);
 		
 		echo '<div class="updated"><p><strong>'.__("Options saved.","tap").'</strong></p></div>';
 	}
@@ -96,6 +97,7 @@ function twitter_anywhere_plus_options() {
 	$tap_retweet_label = get_option('tap_retweet_label');
 	$tap_retweet_content = get_option('tap_retweet_content');
 	$tap_retweet_ts = get_option('tap_retweet_ts');
+	$tap_retweet_bird = get_option('tap_retweet_bird');
 	
 	$tap_twitter_id = get_option('tap_twitter_id');
 
@@ -174,7 +176,10 @@ function twitter_anywhere_plus_options() {
   </tr>
   <tr>
     <td colspan="2"><input type="checkbox" name="retweet_ts" <?php if($tap_retweet_ts == 'yes') { echo 'checked="checked"'; } ?> /> <small><?php _e("Show post title and short URL instead of a custom text.","tap"); ?></small></td>
-    </tr>
+  </tr>
+  <tr>
+    <td colspan="2"><?php _e("Twitter bird:","tap"); ?> &nbsp;<label><input name="retweet_bird" type="radio" value="1" <?php if(($tap_retweet_bird == '1') || ($tap_retweet_bird == '')) { echo 'checked="checked"'; } ?> /> <img src="<?php echo plugins_url("/lightdiv/twitter1.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label><input name="retweet_bird" type="radio" value="2" <?php if($tap_retweet_bird == '2') { echo 'checked="checked"'; } ?> /><img src="<?php echo plugins_url("/lightdiv/twitter2.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label><input name="retweet_bird" type="radio" value="none" <?php if($tap_retweet_bird == 'none') { echo 'checked="checked"'; } ?> /><small> <?php _e("None","tap"); ?></small></label></td>
+  </tr>
 </table>
 
 <hr />
@@ -231,7 +236,7 @@ function TwitterAnywherePlus($post_id) {
 twttr.anywhere(function (T) {
 // configure the @anywhere environment
 '.anywhereOptions().'});
-</script>'.jsOptions().'
+</script>'.jsOptions().cssOptions().'
 <!-- /Twitter @Anywhere Plus -->
 ';
 		
@@ -300,6 +305,26 @@ var TwitterAnywherePlus = {
 };
 /* ]]> */
 </script>';
+	}
+	
+	return $options;
+}
+
+function cssOptions() {
+	
+	$options = '';
+	
+	if( (get_option('tap_retweet') == 'yes') && is_single() && (get_option('tap_retweet_bird') != 'none') ) {
+		$bird = (get_option('tap_retweet_bird') == '2') ? '2' : '1';
+		
+		$options .= '
+<style type="text/css">
+<!--
+#lightdiv .twitter-bird {
+	background-image: url('.plugins_url("/lightdiv/twitter".$bird.".png", __FILE__).');
+}
+-->
+</style>';
 	}
 	
 	return $options;

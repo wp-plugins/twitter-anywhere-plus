@@ -46,7 +46,7 @@ $(document).ready(function(){
 				$("#lightdiv-overlay").css("visibility","visible");
 				$("#lightdiv").css("visibility","visible");
 				//$("#lightdiv").stop().animate({opacity: 1.0}, "slow"); // PNGs are not transparent in IE8
-				$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.4</div>');
+				$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.5</div>');
 				$("#lightdiv-overlay").stop().animate({opacity: 0.6}, "slow");
 			}
 		} else {

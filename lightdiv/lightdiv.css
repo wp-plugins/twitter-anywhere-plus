@@ -26,7 +26,7 @@
   left: 50%;
   top: 50%;
   margin-left: -283px;
-  margin-top: -147px; /* -90px without bird (centered) */
+  margin-top: -150px; /* -90px without bird (centered) */
   visibility: hidden;
 }
 
@@ -87,8 +87,8 @@
 
 #lightdiv .twitter-bird {
   position: relative;
-  height: 57px;
-  background: url(twitter.png) 400px no-repeat;
+  height: 69px;
+  background: 400px no-repeat;
   margin-bottom: -10px;
 }
 

@@ -18,7 +18,11 @@ This plugin allows you to easily add **Twitter @Anywhere** to your blog, enablin
 * Tweet Box
 * Retweet button (Tweet Box with Lightbox effect) [[screenshot](http://wordpress.org/extend/plugins/twitter-anywhere-plus/screenshots/)]
 
-You can enable and configure each function from the plugin settings page.
+You can enable and configure each function from the plugin settings page:
+
+* Customize the label, content and dimensions of the Tweet Box.
+* Display the post title and short URL into the Tweet Box.
+* Choose from two Twitter birds to be displayed above the Retweet Box :)
 
 Languages:
 
@@ -55,6 +59,10 @@ http://dev.twitter.com/anywhere
 http://dev.twitter.com/anywhere/apps/new
 
 == Changelog ==
+
+= 1.5 =
+* Now you can choose between two Twitter birds or none.
+* Improved Retweet button image (valid for any background color).
 
 = 1.4 =
 * Added Retweet button feature (Tweet Box with Lightbox effect).

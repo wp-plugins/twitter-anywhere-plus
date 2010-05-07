@@ -5,7 +5,7 @@
 Plugin Name: Twitter @Anywhere Plus
 Plugin URI: http://www.ngeeks.com/proyectos/twitter-anywhere-plus/
 Description: This plugin allows you to easily add Twitter @Anywhere to your blog, enabling the @Anywhere features.
-Version: 1.5
+Version: 1.6
 Author: GeekRMX
 Author URI: http://www.ngeeks.com/
 License: GPLv3
@@ -107,7 +107,7 @@ function twitter_anywhere_plus_options() {
 <h2>Twitter @Anywhere Plus</h2>
 <hr />
 <form name="form1" method="post" action="">
-<p><?php _e('In order to use @Anywhere, you must first register your blog for a free API key with Twitter.<br />You can do so at the following URL:','tap'); ?> <a href="http://dev.twitter.com/anywhere/apps/new" target="_blank">http://dev.twitter.com/anywhere/apps/new</a></p>
+<p><?php _e('In order to use @Anywhere, you must first register your blog for a free API key with Twitter.<br />You can do so at the following URL:','tap'); ?> <a href="http://dev.twitter.com/anywhere/apps/new" target="_blank">http://dev.twitter.com/anywhere/apps/new</a> (<strong><a href="http://wordpress.org/extend/plugins/twitter-anywhere-plus/faq/" target="_blank">FAQ</a></strong>)</p>
 <p><?php _e("Your @Anywhere API key:","tap"); ?> <input type="text" name="tap_api_key" value="<?php echo $tap_api_key; ?>" size="30"></p>
 <h3><?php _e('@Anywhere features','tap'); ?></h3>
 
@@ -199,25 +199,36 @@ function twitter_anywhere_plus_options() {
 add_action('wp_head','TwitterAnywherePlus');
 add_filter('the_content','tweetBoxDiv');
 add_filter('the_content','retweetButton');
-add_filter('the_posts', 'retweetFiles');
+add_filter('the_posts', 'enqueueFiles');
 
-function retweetFiles($posts) {
-	if ( !is_admin() && (get_option('tap_retweet') == 'yes') && (get_option('tap_api_key') != '') && is_single() ) {
-		wp_enqueue_style("lightdiv", plugins_url("/lightdiv/lightdiv.css", __FILE__));
-		wp_enqueue_script("lightdiv", plugins_url("/lightdiv/lightdiv.js", __FILE__), array('jquery'));
+function enqueueFiles($posts) {
+	if ( !is_admin() && (get_option('tap_api_key') != '') && is_single() ) {
+		if ( get_option('tap_retweet') == 'yes' ) {
+			wp_enqueue_style("lightdiv", plugins_url("/lightdiv/lightdiv.css", __FILE__));
+			wp_enqueue_script("lightdiv", plugins_url("/lightdiv/lightdiv.js", __FILE__), array('jquery'));
+		}
+		if ( get_option('tap_tweetBox') == 'yes' ) {
+			wp_enqueue_script("twitteranywhereplus", plugins_url("twitter-anywhere-plus.js", __FILE__), array('jquery'));
+		}
 	}
 	
 	return $posts;
 }
 
 function titleShortUrl() {
-	global $post;
+	//global $post;												// v1
+	global $wp_query;											// v2
 	
-	// $url = get_permalink($post->ID);
-	// $id = url_to_postid($url);
-	$short = get_bloginfo('url').'/?p='.$post->ID;
+	// $url = get_permalink($post->ID);							// old
+	// $id = url_to_postid($url);								// old
+	//$short = get_bloginfo('url').'/?p='.$post->ID;			// v1
+	$short = get_bloginfo('url').'/?p='.$wp_query->post->ID;	// v2
+		
+	//$title = $post->post_title;								// v1
+	$title = $wp_query->post->post_title;						// v2
+	//$title = single_post_title('', false);					// v2 alt (+ html_entity_decode() or similar)
 	
-	$title = str_replace("\\", "\\\\", $post->post_title);
+	$title = str_replace("\\", "\\\\", $title);					// fix $title for v1 or v2
 	$title = str_replace('"', '\"', $title);
 	
 	return $title.' - '.$short;
@@ -230,7 +241,7 @@ function TwitterAnywherePlus($post_id) {
 	if($tap_api_key != '') {
 		$version = '1';
 		$output = '
-<!-- Twitter @Anywhere Plus v1.4 by GeekRMX - http://www.ngeeks.com -->
+<!-- Twitter @Anywhere Plus v1.6 by GeekRMX - http://www.ngeeks.com -->
 <script src="http://platform.twitter.com/anywhere.js?id='.$tap_api_key.'&v='.$version.'" type="text/javascript"></script>
 <script type="text/javascript">
 twttr.anywhere(function (T) {

@@ -58,7 +58,19 @@ http://dev.twitter.com/anywhere
 
 http://dev.twitter.com/anywhere/apps/new
 
+= How do I fill the form to create a new @Anywhere application? =
+
+Example:
+>Application Name: My blog<br />
+>Application Website: [http://www.myblog.com]()<br />
+>Callback URL: [http://www.myblog.com]()<br />
+>Default Access type: Read & Write
+
 == Changelog ==
+
+= 1.6 =
+* "Tweet" button enabled when mouse over the Tweet Box, and always enabled in the Retweet Box.
+* Now "post title and short URL" works for everyone (`global $post` -> `global $wp_query`).
 
 = 1.5 =
 * Now you can choose between two Twitter birds or none.

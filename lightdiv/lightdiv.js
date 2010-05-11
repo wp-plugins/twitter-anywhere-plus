@@ -38,8 +38,8 @@ $(document).ready(function(){
 	});
 	
 	setTimeout(function() {
-		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.6</div>');
-	}, 5000);
+		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.7</div>');
+	}, 8000);
 	
 	$("#lightdiv-overlay").css("opacity","0.0");
 	//$("#lightdiv").css("opacity","0.0");

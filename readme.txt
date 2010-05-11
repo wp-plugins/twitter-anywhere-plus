@@ -1,7 +1,7 @@
 === Twitter @Anywhere Plus ===
 Contributors: GeekRMX
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40ngeeks%2ecom&lc=ES&item_name=Twitter%20%40Anywhere%20Plus&item_number=WordPress%20Plugin&cn=Your%20name%20and%20website%3f&no_shipping=1&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
-Tags: lightbox, button, retweet, tweet, sidebar, widget, social, javascript, anywhere, api, @anywhere, twitter
+Tags: shortcode, lightbox, button, retweet, tweet, sidebar, widget, social, javascript, anywhere, api, @anywhere, twitter
 Requires at least: 2.7
 Tested up to: 3.0
 Stable tag: trunk
@@ -15,22 +15,24 @@ This plugin allows you to easily add **Twitter @Anywhere** to your blog, enablin
 * Auto-linkification of @usernames
 * Hovercards
 * Follow button
-* Tweet Box
+* Tweet Boxes
 * Retweet button (Tweet Box with Lightbox effect) [[screenshot](http://wordpress.org/extend/plugins/twitter-anywhere-plus/screenshots/)]
 
 You can enable and configure each function from the plugin settings page:
 
-* Customize the label, content and dimensions of the Tweet Box.
+* Customize the label, content and dimensions of your Tweet Boxes.
 * Display the post title and short URL into the Tweet Box.
+* Insert custom Tweet Boxes by using shortcodes.
 * Choose from two Twitter birds to be displayed above the Retweet Box :)
 
 Languages:
 
 * English (en_US)
 * Spanish (es_ES)
+* French (fr_CA)
 * Belorussian (be_BY)
 
-In order to use @Anywhere, you must first register your blog for a free API key with Twitter. You can do so at the following URL: http://dev.twitter.com/anywhere/apps/new
+In order to use @Anywhere, you must first register your blog for a free API key with Twitter. You can do so at the following URL: http://dev.twitter.com/anywhere/apps/new ([FAQ](http://wordpress.org/extend/plugins/twitter-anywhere-plus/faq/))
 
 *More features and a Twitter widget will be available in future releases.*
 
@@ -61,12 +63,19 @@ http://dev.twitter.com/anywhere/apps/new
 = How do I fill the form to create a new @Anywhere application? =
 
 Example:
->Application Name: My blog<br />
->Application Website: [http://www.myblog.com]()<br />
->Callback URL: [http://www.myblog.com]()<br />
->Default Access type: Read & Write
+
+* Application Name: My blog
+* Application Website: [http://www.myblog.com]()
+* Callback URL: [http://www.myblog.com]()
+* Default Access type: Read & Write
 
 == Changelog ==
+
+= 1.7 =
+* Added custom Tweet Boxes by using shortcodes.
+* More customizable Tweet Box content.
+* Settings page improved.
+* Added French translation by Charles Desaulniers ([Siliticx.ca](http://siliticx.ca))
 
 = 1.6 =
 * "Tweet" button enabled when mouse over the Tweet Box, and always enabled in the Retweet Box.
@@ -95,6 +104,7 @@ Example:
 
 * English (en_US) [default]
 * Spanish (es_ES)
+* French (fr_CA) - [Charles Desaulniers](http://siliticx.ca)
 * Belorussian (be_BY) - [Marcis G.](http://pc.de)
 
 You can help translating the plugin into your language.

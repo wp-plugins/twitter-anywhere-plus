@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Twitter @Anywhere Plus 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 18:54+0100\n"
-"PO-Revision-Date: 2010-05-10 18:55+0100\n"
+"POT-Creation-Date: 2010-05-15 16:42+0100\n"
+"PO-Revision-Date: 2010-05-15 16:43+0100\n"
 "Last-Translator: Charles Desaulniers <charles.des@gmail.com>\n"
 "Language-Team: nGeeks.com <contacto@ngeeks.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,193 +20,208 @@ msgstr ""
 msgid "Options saved."
 msgstr ""
 
-#: twitter-anywhere-plus.php:110
+#: twitter-anywhere-plus.php:114
 msgid "In order to use @Anywhere, you must first register your blog for a free API key with Twitter.<br />You can do so at the following URL:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:111
+#: twitter-anywhere-plus.php:115
 msgid "Your @Anywhere API key:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:112
+#: twitter-anywhere-plus.php:116
 msgid "@Anywhere features"
 msgstr ""
 
-#: twitter-anywhere-plus.php:117
+#: twitter-anywhere-plus.php:121
 msgid "Auto-linkification of @usernames"
 msgstr ""
 
-#: twitter-anywhere-plus.php:118
+#: twitter-anywhere-plus.php:122
 msgid "Turn Twitter usernames into links."
 msgstr ""
 
-#: twitter-anywhere-plus.php:126
+#: twitter-anywhere-plus.php:130
 msgid "Hovercards"
 msgstr ""
 
-#: twitter-anywhere-plus.php:127
+#: twitter-anywhere-plus.php:131
 msgid "Show hovercard when you move the mouse over a Twitter username."
 msgstr ""
 
-#: twitter-anywhere-plus.php:135
+#: twitter-anywhere-plus.php:139
 msgid "Follow button"
 msgstr ""
 
-#: twitter-anywhere-plus.php:136
+#: twitter-anywhere-plus.php:140
 msgid "Show a follow button where you want it to be placed."
 msgstr ""
 
-#: twitter-anywhere-plus.php:139
+#: twitter-anywhere-plus.php:143
 msgid "Twitter username:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:143
-#: twitter-anywhere-plus.php:150
-#: twitter-anywhere-plus.php:152
+#: twitter-anywhere-plus.php:147
+#: twitter-anywhere-plus.php:154
+#: twitter-anywhere-plus.php:156
 msgid "DOM element:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:147
+#: twitter-anywhere-plus.php:151
 msgid "The <em>id</em> or <em>class</em> of the element (div, p) where the button must be inserted."
 msgstr ""
 
-#: twitter-anywhere-plus.php:148
-#: twitter-anywhere-plus.php:186
-#: twitter-anywhere-plus.php:199
-#: twitter-anywhere-plus.php:251
+#: twitter-anywhere-plus.php:152
+#: twitter-anywhere-plus.php:193
+#: twitter-anywhere-plus.php:206
+#: twitter-anywhere-plus.php:261
 msgid "Example:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:149
+#: twitter-anywhere-plus.php:153
 msgid "You can create a Text widget with the following code inside:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:151
+#: twitter-anywhere-plus.php:155
 msgid "You can also use classes:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:163
+#: twitter-anywhere-plus.php:167
 msgid "Tweet Box"
 msgstr ""
 
-#: twitter-anywhere-plus.php:164
-msgid "Show a tweet box below your posts."
-msgstr ""
-
-#: twitter-anywhere-plus.php:167
-msgid "Width:"
-msgstr ""
-
 #: twitter-anywhere-plus.php:168
-#: twitter-anywhere-plus.php:172
-#: twitter-anywhere-plus.php:176
-#: twitter-anywhere-plus.php:241
-msgid "Default:"
+msgid "Show a tweet box below your posts or pages."
 msgstr ""
 
 #: twitter-anywhere-plus.php:171
-msgid "Height:"
+#: twitter-anywhere-plus.php:244
+msgid "Display in..."
+msgstr ""
+
+#: twitter-anywhere-plus.php:171
+#: twitter-anywhere-plus.php:244
+msgid "Posts"
+msgstr ""
+
+#: twitter-anywhere-plus.php:171
+#: twitter-anywhere-plus.php:244
+msgid "Pages"
+msgstr ""
+
+#: twitter-anywhere-plus.php:174
+msgid "Width:"
 msgstr ""
 
 #: twitter-anywhere-plus.php:175
-#: twitter-anywhere-plus.php:240
+#: twitter-anywhere-plus.php:179
+#: twitter-anywhere-plus.php:183
+#: twitter-anywhere-plus.php:251
+msgid "Default:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:178
+msgid "Height:"
+msgstr ""
+
+#: twitter-anywhere-plus.php:182
+#: twitter-anywhere-plus.php:250
 msgid "Label:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:179
-#: twitter-anywhere-plus.php:244
+#: twitter-anywhere-plus.php:186
+#: twitter-anywhere-plus.php:254
 msgid "Content:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:183
-#: twitter-anywhere-plus.php:248
+#: twitter-anywhere-plus.php:190
+#: twitter-anywhere-plus.php:258
 msgid "You can use the following tags in the Tweet Box content:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:184
-#: twitter-anywhere-plus.php:224
-#: twitter-anywhere-plus.php:249
+#: twitter-anywhere-plus.php:191
+#: twitter-anywhere-plus.php:231
+#: twitter-anywhere-plus.php:259
 msgid "Post title"
 msgstr ""
 
-#: twitter-anywhere-plus.php:185
-#: twitter-anywhere-plus.php:225
-#: twitter-anywhere-plus.php:250
+#: twitter-anywhere-plus.php:192
+#: twitter-anywhere-plus.php:232
+#: twitter-anywhere-plus.php:260
 msgid "Short URL"
 msgstr ""
 
-#: twitter-anywhere-plus.php:196
+#: twitter-anywhere-plus.php:203
 msgid "Custom Tweet Boxes"
 msgstr ""
 
-#: twitter-anywhere-plus.php:197
+#: twitter-anywhere-plus.php:204
 msgid "Create alternative tweet boxes using the following shorcode:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:198
+#: twitter-anywhere-plus.php:205
 msgid "You can use the shortcode in your posts or text widgets."
 msgstr ""
 
-#: twitter-anywhere-plus.php:203
+#: twitter-anywhere-plus.php:210
 msgid "Attributes"
 msgstr ""
 
-#: twitter-anywhere-plus.php:204
+#: twitter-anywhere-plus.php:211
 msgid "Default"
 msgstr ""
 
-#: twitter-anywhere-plus.php:216
-#: twitter-anywhere-plus.php:241
-#: twitter-anywhere-plus.php:374
-#: twitter-anywhere-plus.php:425
+#: twitter-anywhere-plus.php:223
+#: twitter-anywhere-plus.php:251
+#: twitter-anywhere-plus.php:387
+#: twitter-anywhere-plus.php:438
 msgid "What's happening?"
 msgstr ""
 
-#: twitter-anywhere-plus.php:220
+#: twitter-anywhere-plus.php:227
 msgid "empty"
 msgstr ""
 
-#: twitter-anywhere-plus.php:223
+#: twitter-anywhere-plus.php:230
 msgid "You can use the following tags in the content:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:233
+#: twitter-anywhere-plus.php:240
 msgid "Retweet button"
 msgstr ""
 
-#: twitter-anywhere-plus.php:234
-msgid "Show a \"Retweet\" button on the top/bottom right corner of your posts.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)"
+#: twitter-anywhere-plus.php:241
+msgid "Show a \"Retweet\" button on the top/bottom right corner of your posts or pages.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)"
 msgstr ""
 
-#: twitter-anywhere-plus.php:237
+#: twitter-anywhere-plus.php:247
 msgid "Button position:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:237
+#: twitter-anywhere-plus.php:247
 msgid "Top"
 msgstr ""
 
-#: twitter-anywhere-plus.php:237
+#: twitter-anywhere-plus.php:247
 msgid "Bottom"
 msgstr ""
 
-#: twitter-anywhere-plus.php:254
+#: twitter-anywhere-plus.php:264
 msgid "Twitter bird:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:254
+#: twitter-anywhere-plus.php:264
 msgid "None"
 msgstr ""
 
-#: twitter-anywhere-plus.php:261
+#: twitter-anywhere-plus.php:271
 msgid "Save changes"
 msgstr ""
 
-#: twitter-anywhere-plus.php:264
+#: twitter-anywhere-plus.php:274
 msgid "This plugin has been developed by <strong>GeekRMX</strong>."
 msgstr ""
 
-#: twitter-anywhere-plus.php:266
+#: twitter-anywhere-plus.php:276
 msgid "Website:"
 msgstr ""
 

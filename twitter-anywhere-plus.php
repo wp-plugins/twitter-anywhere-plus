@@ -5,7 +5,7 @@
 Plugin Name: Twitter @Anywhere Plus
 Plugin URI: http://www.ngeeks.com/proyectos/twitter-anywhere-plus/
 Description: This plugin allows you to easily add Twitter @Anywhere to your blog, enabling the @Anywhere features.
-Version: 1.7
+Version: 1.8
 Author: GeekRMX
 Author URI: http://www.ngeeks.com/
 License: GPLv3
@@ -52,15 +52,14 @@ function twitter_anywhere_plus_options() {
 		if(isset($_POST['hovercards'])) { update_option('tap_hovercards', 'yes'); } else { update_option('tap_hovercards', 'no'); }
 		
 		if(isset($_POST['followButton'])) { update_option('tap_followButton', 'yes'); } else { update_option('tap_followButton', 'no'); }
-		
 		update_option('tap_followButton_dom', $_POST['followButton_dom']);
 		update_option('tap_followButton_user', $_POST['followButton_user']);
 		
 		if(isset($_POST['tweetBox'])) { update_option('tap_tweetBox', 'yes'); } else { update_option('tap_tweetBox', 'no'); }
-		
+		if(isset($_POST['tweetBox_dposts'])) { update_option('tap_tweetBox_dposts', 'yes'); } else { update_option('tap_tweetBox_dposts', 'no'); }
+		if(isset($_POST['tweetBox_dpages'])) { update_option('tap_tweetBox_dpages', 'yes'); } else { update_option('tap_tweetBox_dpages', 'no'); }
 		$tBwidth = (((int) $_POST['tweetBox_width']) == 0) ? '' : (int) $_POST['tweetBox_width'];
 		$tBheight = (((int) $_POST['tweetBox_height']) == 0) ? '' : (int) $_POST['tweetBox_height'];
-		
 		update_option('tap_tweetBox_width', $tBwidth);
 		update_option('tap_tweetBox_height', $tBheight);
 		update_option('tap_tweetBox_label', $_POST['tweetBox_label']);
@@ -69,7 +68,8 @@ function twitter_anywhere_plus_options() {
 		if(isset($_POST['cTweetBox'])) { update_option('tap_cTweetBox', 'yes'); } else { update_option('tap_cTweetBox', 'no'); }
 		
 		if(isset($_POST['retweet'])) { update_option('tap_retweet', 'yes'); } else { update_option('tap_retweet', 'no'); }
-		
+		if(isset($_POST['retweet_dposts'])) { update_option('tap_retweet_dposts', 'yes'); } else { update_option('tap_retweet_dposts', 'no'); }
+		if(isset($_POST['retweet_dpages'])) { update_option('tap_retweet_dpages', 'yes'); } else { update_option('tap_retweet_dpages', 'no'); }
 		update_option('tap_retweet_position', $_POST['retweet_position']);
 		update_option('tap_retweet_label', $_POST['retweet_label']);
 		update_option('tap_retweet_content', $_POST['retweet_content']);
@@ -88,6 +88,8 @@ function twitter_anywhere_plus_options() {
 	$tap_followButton_user = get_option('tap_followButton_user');
 	
 	$tap_tweetBox = get_option('tap_tweetBox');
+	$tap_tweetBox_dposts = get_option('tap_tweetBox_dposts');
+	$tap_tweetBox_dpages = get_option('tap_tweetBox_dpages');
 	$tap_tweetBox_width = get_option('tap_tweetBox_width');
 	$tap_tweetBox_height = get_option('tap_tweetBox_height');
 	$tap_tweetBox_label = get_option('tap_tweetBox_label');
@@ -96,6 +98,8 @@ function twitter_anywhere_plus_options() {
 	$tap_cTweetBox = get_option('tap_cTweetBox');
 	
 	$tap_retweet = get_option('tap_retweet');
+	$tap_retweet_dposts = get_option('tap_retweet_dposts');
+	$tap_retweet_dpages = get_option('tap_retweet_dpages');
 	$tap_retweet_position = get_option('tap_retweet_position');
 	$tap_retweet_label = get_option('tap_retweet_label');
 	$tap_retweet_content = get_option('tap_retweet_content');
@@ -161,8 +165,11 @@ function twitter_anywhere_plus_options() {
   <tr>
     <td style="padding:10px; padding-top:0px;">
       <p><label><input type="checkbox" name="tweetBox" <?php if($tap_tweetBox == 'yes') { echo 'checked="checked"'; } ?> /> <strong><?php _e('Tweet Box','tap'); ?></strong></label></p>
-      <p><small><?php _e('Show a tweet box below your posts.','tap'); ?></small></p>
+      <p><small><?php _e('Show a tweet box below your posts or pages.','tap'); ?></small></p>
       <table border="0">
+        <tr>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label><input type="checkbox" name="tweetBox_dposts" <?php if($tap_tweetBox_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label><input type="checkbox" name="tweetBox_dpages" <?php if($tap_tweetBox_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
+        </tr>
         <tr>
           <td><?php _e("Width:","tap"); ?></td>
           <td><input type="text" name="tweetBox_width" value="<?php echo $tap_tweetBox_width; ?>" size="20"> <small><?php _e("Default:","tap"); ?> 515 (px)</small></td>
@@ -231,10 +238,13 @@ function twitter_anywhere_plus_options() {
   <tr>
     <td style="padding:10px; padding-top:0px;">
       <p><label><input type="checkbox" name="retweet" <?php if($tap_retweet == 'yes') { echo 'checked="checked"'; } ?> /> <strong><?php _e('Retweet button','tap'); ?></strong></label></p>
-      <p><small><?php _e('Show a "Retweet" button on the top/bottom right corner of your posts.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)','tap'); ?></small></p>
+      <p><small><?php _e('Show a "Retweet" button on the top/bottom right corner of your posts or pages.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)','tap'); ?></small></p>
       <table border="0">
         <tr>
-          <td colspan="2" style="padding-bottom:3px"><?php _e("Button position:","tap"); ?>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="top" <?php if(($tap_retweet_position == 'top') || ($tap_retweet_position == '')) { echo 'checked="checked"'; } ?> /><small> <?php _e("Top","tap"); ?></small></label>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="bottom" <?php if($tap_retweet_position == 'bottom') { echo 'checked="checked"'; } ?> /><small> <?php _e("Bottom","tap"); ?></small></label></td>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label><input type="checkbox" name="retweet_dposts" <?php if($tap_retweet_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label><input type="checkbox" name="retweet_dpages" <?php if($tap_retweet_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Button position:","tap"); ?>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="top" <?php if(($tap_retweet_position == 'top') || ($tap_retweet_position == '')) { echo 'checked="checked"'; } ?> /> <?php _e("Top","tap"); ?></label>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="bottom" <?php if($tap_retweet_position == 'bottom') { echo 'checked="checked"'; } ?> /> <?php _e("Bottom","tap"); ?></label></td>
         </tr>
         <tr>
           <td><?php _e("Label:","tap"); ?></td>
@@ -282,13 +292,16 @@ if ( (get_option('tap_cTweetBox') == 'yes') && (get_option('tap_api_key') != '')
 }
 
 function enqueueFiles($posts) {
-	if ( !is_admin() && (get_option('tap_api_key') != '') && is_single() ) {
-		if ( get_option('tap_retweet') == 'yes' ) {
+	if ( !is_admin() && (get_option('tap_api_key') != '') ) {
+		if ( (get_option('tap_retweet') == 'yes') && condTags('retweet') ) {
 			wp_enqueue_style("lightdiv", plugins_url("/lightdiv/lightdiv.css", __FILE__));
 			wp_enqueue_script("lightdiv", plugins_url("/lightdiv/lightdiv.js", __FILE__), array('jquery'));
 		}
-		if ( get_option('tap_tweetBox') == 'yes' ) {
+		if ( (get_option('tap_tweetBox') == 'yes') && condTags('tweetBox') ) {
 			wp_enqueue_script("twitteranywhereplus", plugins_url("twitter-anywhere-plus.js", __FILE__), array('jquery'));
+		}
+		if ( get_option('tap_cTweetBox') == 'yes' ) {
+			wp_enqueue_script("jquery");
 		}
 	}
 	
@@ -315,7 +328,7 @@ function TwitterAnywherePlus($post_id) {
 	if($tap_api_key != '') {
 		$version = '1';
 		$output = '
-<!-- Twitter @Anywhere Plus v1.7 by GeekRMX - http://www.ngeeks.com -->
+<!-- Twitter @Anywhere Plus v1.8 by GeekRMX - http://www.ngeeks.com -->
 <script src="http://platform.twitter.com/anywhere.js?id='.$tap_api_key.'&v='.$version.'" type="text/javascript"></script>
 <script type="text/javascript">
 twttr.anywhere(function (T) {
@@ -353,7 +366,7 @@ function anywhereOptions() {
 	$tap_tweetBox_label = get_option('tap_tweetBox_label');
 	$tap_tweetBox_content = get_option('tap_tweetBox_content');
 	
-	if( (get_option('tap_tweetBox') == 'yes') && is_single() ) {
+	if( (get_option('tap_tweetBox') == 'yes') && condTags('tweetBox') ) {
 		
 		$selected_options .= 'T("#tweetBox").tweetBox({'."\n";
 		if($tap_tweetBox_height != '') $selected_options .= 'height: '.$tap_tweetBox_height.','."\n";
@@ -370,7 +383,7 @@ function jsOptions() {
 	
 	$options = '';
 	
-	if( (get_option('tap_retweet') == 'yes') && is_single() ) {
+	if( (get_option('tap_retweet') == 'yes') && condTags('retweet') ) {
 		$rtLabel = (get_option('tap_retweet_label') == '') ? __("What's happening?","tap") : get_option('tap_retweet_label');
 		$rtContent = tweetBoxContent(get_option('tap_retweet_content'));
 		
@@ -392,7 +405,7 @@ function cssOptions() {
 	
 	$options = '';
 	
-	if( (get_option('tap_retweet') == 'yes') && is_single() && (get_option('tap_retweet_bird') != 'none') ) {
+	if( (get_option('tap_retweet') == 'yes') && condTags('retweet') && (get_option('tap_retweet_bird') != 'none') ) {
 		$bird = (get_option('tap_retweet_bird') == '2') ? '2' : '1';
 		
 		$options .= '
@@ -409,7 +422,7 @@ function cssOptions() {
 }
 
 function tweetBoxDiv($content) {
-	if( (get_option('tap_tweetBox') == 'yes') && (get_option('tap_api_key') != '') && is_single() ) {
+	if( (get_option('tap_tweetBox') == 'yes') && (get_option('tap_api_key') != '') && condTags('tweetBox') ) {
 		return $content.'<div id="tweetBox"></div>';
 	}
 	else
@@ -441,13 +454,18 @@ function cTweetBox($atts) {
 	  defaultContent: "'.$content.'"
 	});
   });
+  jQuery(document).ready(function($) {
+	$(".cTweetBox-'.$ramdom.'").mouseover(function() {
+		$(".cTweetBox-'.$ramdom.' > .twitter-anywhere-tweet-box")[0].contentWindow.document.getElementById("tweet-box").focus();
+	});
+  });
 </script>
 <!-- /Twitter @Anywhere Plus -->
 ';
 }
 
 function retweetButton($content) {
-	if( (get_option('tap_retweet') == 'yes') && (get_option('tap_api_key') != '') && is_single() ) {
+	if( (get_option('tap_retweet') == 'yes') && (get_option('tap_api_key') != '') && condTags('retweet') ) {
 		if(get_option('tap_retweet_position') == 'bottom') {
 			$content = $content."\n".'<div id="lightdiv-button-div"><a href="#retweet"><img id="lightdiv-button" src="'.plugins_url("/images/retweet.png", __FILE__).'" border="0"></a></div>';
 		} else {
@@ -456,6 +474,17 @@ function retweetButton($content) {
 	}
 	
 	return $content;
+}
+
+function condTags($element) {
+	$display = false;
+	if($element == 'tweetBox') {
+		$display = ((get_option('tap_tweetBox_dposts') != "no") && is_single()) || ((get_option('tap_tweetBox_dpages') == "yes") && is_page());
+	}
+	if($element == 'retweet') {
+		$display = ((get_option('tap_retweet_dposts') != "no") && is_single()) || ((get_option('tap_retweet_dpages') == "yes") && is_page());
+	}
+	return $display;
 }
 
 ?>

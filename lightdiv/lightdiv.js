@@ -38,8 +38,12 @@ $(document).ready(function(){
 	});
 	
 	setTimeout(function() {
-		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.7</div>');
+		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.8</div>');
 	}, 8000);
+	
+	$("#tap-rt-tweetbox").mouseover(function() {
+		$("#tap-rt-tweetbox > .twitter-anywhere-tweet-box")[0].contentWindow.document.getElementById("tweet-box").focus();
+	});
 	
 	$("#lightdiv-overlay").css("opacity","0.0");
 	//$("#lightdiv").css("opacity","0.0");
@@ -51,9 +55,6 @@ $(document).ready(function(){
 				$("#lightdiv").css("visibility","visible");
 				//$("#lightdiv").stop().animate({opacity: 1.0}, "slow"); // PNGs are not transparent in IE8
 				$("#lightdiv-overlay").stop().animate({opacity: 0.6}, "slow");
-				
-				$(".twitter-anywhere-tweet-box").focus();
-				$(".twitter-anywhere-tweet-box").contents().find("#tweet-box").focus();
 			}
 		} else {
 			$("#lightdiv-overlay").stop().animate({opacity: 0.0}, "slow", function() { $("#lightdiv-overlay").css("visibility","hidden"); });

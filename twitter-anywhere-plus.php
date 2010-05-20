@@ -5,7 +5,7 @@
 Plugin Name: Twitter @Anywhere Plus
 Plugin URI: http://www.ngeeks.com/proyectos/twitter-anywhere-plus/
 Description: This plugin allows you to easily add Twitter @Anywhere to your blog, enabling the @Anywhere features.
-Version: 1.8
+Version: 1.9
 Author: GeekRMX
 Author URI: http://www.ngeeks.com/
 License: GPLv3
@@ -47,6 +47,10 @@ function twitter_anywhere_plus_options() {
 		$api_key = $_POST['tap_api_key'];
 		update_option('tap_api_key', $api_key);
 		
+		update_option('tap_shortener', $_POST['shortener']);
+		update_option('tap_bitly_login', $_POST['bitly_login']);
+		update_option('tap_bitly_key', $_POST['bitly_key']);
+		
 		if(isset($_POST['linkifyUsers'])) { update_option('tap_linkifyUsers', 'yes'); } else { update_option('tap_linkifyUsers', 'no'); }
 		
 		if(isset($_POST['hovercards'])) { update_option('tap_hovercards', 'yes'); } else { update_option('tap_hovercards', 'no'); }
@@ -80,6 +84,10 @@ function twitter_anywhere_plus_options() {
 	
 	$tap_api_key = get_option('tap_api_key');
 	
+	$tap_shortener = get_option('tap_shortener');
+	$tap_bitly_login = get_option('tap_bitly_login');
+	$tap_bitly_key = get_option('tap_bitly_key');
+	
 	$tap_linkifyUsers = get_option('tap_linkifyUsers');
 	$tap_hovercards = get_option('tap_hovercards');
 	
@@ -109,10 +117,11 @@ function twitter_anywhere_plus_options() {
 
 <div class="wrap">
 <h2>Twitter @Anywhere Plus</h2>
-<hr />
+
 <form name="form1" method="post" action="">
 <p><?php _e('In order to use @Anywhere, you must first register your blog for a free API key with Twitter.<br />You can do so at the following URL:','tap'); ?> <a href="http://dev.twitter.com/anywhere/apps/new" target="_blank">http://dev.twitter.com/anywhere/apps/new</a> (<strong><a href="http://wordpress.org/extend/plugins/twitter-anywhere-plus/faq/" target="_blank">FAQ</a></strong>)</p>
 <p><?php _e("Your @Anywhere API key:","tap"); ?> <input type="text" name="tap_api_key" value="<?php echo $tap_api_key; ?>" size="30"></p>
+
 <h3><?php _e('@Anywhere features','tap'); ?></h3>
 
 <table style="width:580px; border:1px solid #999; border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px;">
@@ -168,7 +177,7 @@ function twitter_anywhere_plus_options() {
       <p><small><?php _e('Show a tweet box below your posts or pages.','tap'); ?></small></p>
       <table border="0">
         <tr>
-          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label><input type="checkbox" name="tweetBox_dposts" <?php if($tap_tweetBox_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label><input type="checkbox" name="tweetBox_dpages" <?php if($tap_tweetBox_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" type="checkbox" name="tweetBox_dposts" <?php if($tap_tweetBox_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" type="checkbox" name="tweetBox_dpages" <?php if($tap_tweetBox_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
         </tr>
         <tr>
           <td><?php _e("Width:","tap"); ?></td>
@@ -189,7 +198,7 @@ function twitter_anywhere_plus_options() {
         <tr>
           <td colspan="2"><small><?php _e("You can use the following tags in the Tweet Box content:","tap"); ?><br />
           <code>%t</code> &raquo; <?php _e("Post title","tap"); ?><br />
-          <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?><br />
+          <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?> <span style="color:#800000">*</span><br />
           <u><?php _e("Example:","tap"); ?></u> <code>%t - %u (via @nGeeksCom)</code></small></td>
           </tr>
       </table>
@@ -229,7 +238,7 @@ function twitter_anywhere_plus_options() {
       </table>
       <p><small><?php _e("You can use the following tags in the content:","tap"); ?><br />
       <code>%t</code> &raquo; <?php _e("Post title","tap"); ?><br />
-      <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?></small></p>
+      <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?> <span style="color:#800000">*</span></small></p>
     </td>
   </tr>
 </table>
@@ -241,10 +250,10 @@ function twitter_anywhere_plus_options() {
       <p><small><?php _e('Show a "Retweet" button on the top/bottom right corner of your posts or pages.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)','tap'); ?></small></p>
       <table border="0">
         <tr>
-          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label><input type="checkbox" name="retweet_dposts" <?php if($tap_retweet_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label><input type="checkbox" name="retweet_dpages" <?php if($tap_retweet_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Display in...","tap"); ?>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" type="checkbox" name="retweet_dposts" <?php if($tap_retweet_dposts != 'no') { echo 'checked="checked"'; } ?> /> <?php _e("Posts","tap"); ?></label>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" type="checkbox" name="retweet_dpages" <?php if($tap_retweet_dpages == 'yes') { echo 'checked="checked"'; } ?> /> <?php _e("Pages","tap"); ?></label></td>
         </tr>
         <tr>
-          <td colspan="2" style="padding-bottom:3px"><?php _e("Button position:","tap"); ?>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="top" <?php if(($tap_retweet_position == 'top') || ($tap_retweet_position == '')) { echo 'checked="checked"'; } ?> /> <?php _e("Top","tap"); ?></label>&nbsp;&nbsp;<label><input name="retweet_position" type="radio" value="bottom" <?php if($tap_retweet_position == 'bottom') { echo 'checked="checked"'; } ?> /> <?php _e("Bottom","tap"); ?></label></td>
+          <td colspan="2" style="padding-bottom:3px"><?php _e("Button position:","tap"); ?>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" name="retweet_position" type="radio" value="top" <?php if(($tap_retweet_position == 'top') || ($tap_retweet_position == '')) { echo 'checked="checked"'; } ?> /> <?php _e("Top","tap"); ?></label>&nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" name="retweet_position" type="radio" value="bottom" <?php if($tap_retweet_position == 'bottom') { echo 'checked="checked"'; } ?> /> <?php _e("Bottom","tap"); ?></label></td>
         </tr>
         <tr>
           <td><?php _e("Label:","tap"); ?></td>
@@ -257,13 +266,40 @@ function twitter_anywhere_plus_options() {
         <tr>
           <td colspan="2"><small><?php _e("You can use the following tags in the Tweet Box content:","tap"); ?><br />
           <code>%t</code> &raquo; <?php _e("Post title","tap"); ?><br />
-          <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?><br />
+          <code>%u</code> &raquo; <?php _e("Short URL","tap"); ?> <span style="color:#800000">*</span><br />
           <u><?php _e("Example:","tap"); ?></u> <code>%t - %u (via @nGeeksCom)</code></small></td>
         </tr>
         <tr>
-          <td colspan="2" style="padding-top:3px"><?php _e("Twitter bird:","tap"); ?> &nbsp;<label><input name="retweet_bird" type="radio" value="1" <?php if(($tap_retweet_bird == '1') || ($tap_retweet_bird == '')) { echo 'checked="checked"'; } ?> /> <img src="<?php echo plugins_url("/lightdiv/twitter1.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label><input name="retweet_bird" type="radio" value="2" <?php if($tap_retweet_bird == '2') { echo 'checked="checked"'; } ?> /><img src="<?php echo plugins_url("/lightdiv/twitter2.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label><input name="retweet_bird" type="radio" value="none" <?php if($tap_retweet_bird == 'none') { echo 'checked="checked"'; } ?> /><small> <?php _e("None","tap"); ?></small></label></td>
+          <td colspan="2" style="padding-top:3px"><?php _e("Twitter bird:","tap"); ?> &nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" name="retweet_bird" type="radio" value="1" <?php if(($tap_retweet_bird == '1') || ($tap_retweet_bird == '')) { echo 'checked="checked"'; } ?> /> <img src="<?php echo plugins_url("/lightdiv/twitter1.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" name="retweet_bird" type="radio" value="2" <?php if($tap_retweet_bird == '2') { echo 'checked="checked"'; } ?> /><img src="<?php echo plugins_url("/lightdiv/twitter2.png", __FILE__); ?>"  border="0" align="absmiddle" /></label> &nbsp;&nbsp;<label style="vertical-align:text-top"><input style="vertical-align:text-top" name="retweet_bird" type="radio" value="none" <?php if($tap_retweet_bird == 'none') { echo 'checked="checked"'; } ?> /><small> <?php _e("None","tap"); ?></small></label></td>
         </tr>
       </table>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+function display_bitly() {
+	document.getElementById("div-bitly").style.visibility = "visible";
+	document.getElementById("div-none").style.visibility = "hidden";
+}
+function display_none() {
+	document.getElementById("div-none").style.visibility = "visible";
+	document.getElementById("div-bitly").style.visibility = "hidden";
+}
+</script>
+
+<table style="width:580px; margin-top:15px; background-color:#FFF; border:1px solid #800000; border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px;">
+  <tr>
+    <td style="padding:10px 10px 0px 10px;">
+    <strong><?php _e('URL shortener:','tap'); ?></strong>&nbsp;&nbsp;<label onclick="display_bitly()" style="vertical-align:text-top"><input style="vertical-align:text-top" name="shortener" type="radio" value="bitly" <?php if(($tap_shortener == 'bitly') || ($tap_shortener == '')) { echo 'checked="checked"'; } ?> /> bit.ly</label>&nbsp;&nbsp;&nbsp;<label onclick="display_none()" style="vertical-align:text-top"><input style="vertical-align:text-top" name="shortener" type="radio" value="none" <?php if($tap_shortener == 'none') { echo 'checked="checked"'; } ?> /> <?php _e("None","tap"); ?></label>
+    <div style="float:left;<?php if($tap_shortener == 'none') { echo ' visibility:hidden;'; } ?>" id="div-bitly">
+    <p><?php _e('Username:','tap'); ?> <input type="text" name="bitly_login" value="<?php echo $tap_bitly_login; ?>" size="13">&nbsp;&nbsp;<?php _e('API key:','tap'); ?> <input type="text" name="bitly_key" value="<?php echo $tap_bitly_key; ?>" size="42"></p>
+    <p><small><?php printf(__('%1$sSign up for a bit.ly account%2$s. Once you register, you will find your API key %3$shere%2$s.<br />If you leave this blank, the plugin will use a default username and API key.','tap'), '<a href="http://bit.ly/a/sign_up" target="_blank">', '</a>', '<a href="http://bit.ly/a/your_api_key" target="_blank">'); ?></small></p>
+    <p><small><?php _e("Example:","tap"); ?> <em>http://bit.ly/dtlXWC</em></small></p>
+    </div>
+    <div style="position:absolute; float:left;<?php if(($tap_shortener == 'bitly') || ($tap_shortener == '')) { echo ' visibility:hidden;'; } ?>" id="div-none">
+    <p><small><?php _e("Example:","tap"); ?> <em><?php echo get_bloginfo('url').'/?p=ID'; ?></em></small></p>
+    </div>
     </td>
   </tr>
 </table>
@@ -310,15 +346,46 @@ function enqueueFiles($posts) {
 
 function tweetBoxContent($tbcontent) {
 	global $wp_query;
+	
 	$title = $wp_query->post->post_title;
 	$title = str_replace("\\", "\\\\", $title);
 	$title = str_replace('"', '\"', $title);
-	$short = get_bloginfo('url').'/?p='.$wp_query->post->ID;
+	
+	$id = $wp_query->post->ID;
+	$url = get_permalink($id);
+	
+	if((get_option('tap_shortener') == '') || (get_option('tap_shortener') == 'bitly')) {
+		$response = bitly_shortener($url);
+		if (strpos($response,'http://') === false) {
+			$url = get_bloginfo('url').'/?p='.$wp_query->post->ID;
+		} else {
+			$url = $response;
+		}
+	} else {
+		$url = get_bloginfo('url').'/?p='.$wp_query->post->ID;
+	}
 	
 	$tbcontent = str_replace('%t', $title, $tbcontent);
-	$tbcontent = str_replace('%u', $short, $tbcontent);
+	$tbcontent = str_replace('%u', $url, $tbcontent);
 	
 	return $tbcontent;
+}
+
+function bitly_shortener($url) {
+	$bitly_login = get_option('tap_bitly_login');
+	$bitly_key = get_option('tap_bitly_key');
+	if(($bitly_login == '') && ($bitly_key == '')) {
+		$bitly_login = 'twitteranywhereplus';
+		$bitly_key = 'R_2855ea83fd022384e42af4e08fef0357' ;
+	}
+	
+	$bitly_login = urlencode(trim($bitly_login));
+	$bitly_key = urlencode(trim($bitly_key));
+	$url_encoded = urlencode($url);
+	
+	$response = trim(wp_remote_retrieve_body(wp_remote_get("http://api.bit.ly/v3/shorten?login={$bitly_login}&apiKey={$bitly_key}&uri={$url_encoded}&format=txt")));
+	
+	return $response;
 }
 
 function TwitterAnywherePlus($post_id) {
@@ -328,7 +395,7 @@ function TwitterAnywherePlus($post_id) {
 	if($tap_api_key != '') {
 		$version = '1';
 		$output = '
-<!-- Twitter @Anywhere Plus v1.8 by GeekRMX - http://www.ngeeks.com -->
+<!-- Twitter @Anywhere Plus v1.9 by GeekRMX - http://www.ngeeks.com -->
 <script src="http://platform.twitter.com/anywhere.js?id='.$tap_api_key.'&v='.$version.'" type="text/javascript"></script>
 <script type="text/javascript">
 twttr.anywhere(function (T) {
@@ -373,6 +440,10 @@ function anywhereOptions() {
 		if($tap_tweetBox_width != '') $selected_options .= 'width: '.$tap_tweetBox_width.','."\n";
 		if($tap_tweetBox_label != '') $selected_options .= 'label: "'.$tap_tweetBox_label.'",'."\n";
 		if($tap_tweetBox_content != '') $selected_options .= 'defaultContent: "'.tweetBoxContent($tap_tweetBox_content).'",'."\n";
+		if( ($tap_tweetBox_height != '') || ($tap_tweetBox_width != '') || ($tap_tweetBox_label != '') || ($tap_tweetBox_content != '') ) {
+			$selected_options = rtrim($selected_options, ",\n");
+			$selected_options .= "\n";
+		}
 		$selected_options .= '});'."\n";
 	}
 	

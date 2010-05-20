@@ -22,6 +22,7 @@ You can enable and configure each function from the plugin settings page:
 
 * Customize the label, content and dimensions of your Tweet Boxes.
 * Display the post title and short URL into the Tweet Box.
+* Shorten your URLs with *bit.ly*.
 * Insert custom Tweet Boxes by using shortcodes.
 * Clicking the Retweet button will launch a special Tweet Box with Lightbox effect ([screenshot](http://wordpress.org/extend/plugins/twitter-anywhere-plus/screenshots/)).
 * Choose from two Twitter birds to be displayed above the Retweet Box :)
@@ -71,6 +72,10 @@ Example:
 * Default Access type: Read & Write
 
 == Changelog ==
+
+= 1.9 =
+* Added URL shortener (bit.ly)
+* Fix: final comma in JavaScript array
 
 = 1.8 =
 * Display the Tweet Box and Retweet button either in posts or pages.

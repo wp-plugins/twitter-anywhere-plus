@@ -22,7 +22,7 @@ You can enable and configure each function from the plugin settings page:
 
 * Customize the label, content and dimensions of your Tweet Boxes.
 * Display the post title and short URL into the Tweet Box.
-* Shorten your URLs with *bit.ly*.
+* Shorten your URLs with *bit.ly* or *is.gd*.
 * Insert custom Tweet Boxes by using shortcodes.
 * Clicking the Retweet button will launch a special Tweet Box with Lightbox effect ([screenshot](http://wordpress.org/extend/plugins/twitter-anywhere-plus/screenshots/)).
 * Choose from two Twitter birds to be displayed above the Retweet Box :)
@@ -35,8 +35,6 @@ Languages:
 * Belorussian (be_BY)
 
 In order to use @Anywhere, you must first register your blog for a free API key with Twitter. You can do so at the following URL: http://dev.twitter.com/anywhere/apps/new ([FAQ](http://wordpress.org/extend/plugins/twitter-anywhere-plus/faq/))
-
-*More features and a Twitter widget will be available in future releases.*
 
 [nGeeks.com](http://www.ngeeks.com)
 
@@ -72,6 +70,12 @@ Example:
 * Default Access type: Read & Write
 
 == Changelog ==
+
+= 2.0 =
+* Added new URL shortener: is.gd
+* Now you must provide your own bit.ly username and API key.
+* Retweet button can be placed in any corner of your posts.
+* The container div of the Tweet Box is now centered.
 
 = 1.9 =
 * Added URL shortener (bit.ly)

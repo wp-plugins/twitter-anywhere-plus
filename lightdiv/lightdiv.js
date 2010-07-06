@@ -38,7 +38,7 @@ $(document).ready(function(){
 	});
 	
 	setTimeout(function() {
-		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v1.9</div>');
+		$("#lightdiv-overlay").append('<div class="plugin">Twitter @Anywhere Plus v2.0</div>');
 	}, 8000);
 	
 	$("#tap-rt-tweetbox").mouseover(function() {

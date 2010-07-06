@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Twitter @Anywhere Plus 1.9\n"
+"Project-Id-Version: Twitter @Anywhere Plus 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-19 23:09+0100\n"
-"PO-Revision-Date: 2010-05-19 23:14+0100\n"
+"POT-Creation-Date: 2010-07-06 15:26+0100\n"
+"PO-Revision-Date: 2010-07-06 15:26+0100\n"
 "Last-Translator: Jose Antonio Ramirez <geekrmx@ngeeks.com>\n"
 "Language-Team: nGeeks.com <contacto@ngeeks.com>\n"
 "MIME-Version: 1.0\n"
@@ -73,9 +73,10 @@ msgstr ""
 #: twitter-anywhere-plus.php:161
 #: twitter-anywhere-plus.php:202
 #: twitter-anywhere-plus.php:215
-#: twitter-anywhere-plus.php:270
-#: twitter-anywhere-plus.php:298
-#: twitter-anywhere-plus.php:301
+#: twitter-anywhere-plus.php:288
+#: twitter-anywhere-plus.php:324
+#: twitter-anywhere-plus.php:328
+#: twitter-anywhere-plus.php:332
 msgid "Example:"
 msgstr ""
 
@@ -117,7 +118,7 @@ msgstr ""
 #: twitter-anywhere-plus.php:184
 #: twitter-anywhere-plus.php:188
 #: twitter-anywhere-plus.php:192
-#: twitter-anywhere-plus.php:260
+#: twitter-anywhere-plus.php:278
 msgid "Default:"
 msgstr ""
 
@@ -126,29 +127,29 @@ msgid "Height:"
 msgstr ""
 
 #: twitter-anywhere-plus.php:191
-#: twitter-anywhere-plus.php:259
+#: twitter-anywhere-plus.php:277
 msgid "Label:"
 msgstr ""
 
 #: twitter-anywhere-plus.php:195
-#: twitter-anywhere-plus.php:263
+#: twitter-anywhere-plus.php:281
 msgid "Content:"
 msgstr ""
 
 #: twitter-anywhere-plus.php:199
-#: twitter-anywhere-plus.php:267
+#: twitter-anywhere-plus.php:285
 msgid "You can use the following tags in the Tweet Box content:"
 msgstr ""
 
 #: twitter-anywhere-plus.php:200
 #: twitter-anywhere-plus.php:240
-#: twitter-anywhere-plus.php:268
+#: twitter-anywhere-plus.php:286
 msgid "Post title"
 msgstr ""
 
 #: twitter-anywhere-plus.php:201
 #: twitter-anywhere-plus.php:241
-#: twitter-anywhere-plus.php:269
+#: twitter-anywhere-plus.php:287
 msgid "Short URL"
 msgstr ""
 
@@ -173,9 +174,9 @@ msgid "Default"
 msgstr ""
 
 #: twitter-anywhere-plus.php:232
-#: twitter-anywhere-plus.php:260
-#: twitter-anywhere-plus.php:458
-#: twitter-anywhere-plus.php:509
+#: twitter-anywhere-plus.php:278
+#: twitter-anywhere-plus.php:502
+#: twitter-anywhere-plus.php:553
 msgid "What's happening?"
 msgstr ""
 
@@ -192,56 +193,64 @@ msgid "Retweet button"
 msgstr ""
 
 #: twitter-anywhere-plus.php:250
-msgid "Show a \"Retweet\" button on the top/bottom right corner of your posts or pages.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)"
+msgid "Show a \"Retweet\" button on your posts or pages.<br />(Clicking the button will launch a Tweet Box with a Lightbox effect.)"
 msgstr ""
 
-#: twitter-anywhere-plus.php:256
+#: twitter-anywhere-plus.php:259
 msgid "Button position:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:256
-msgid "Top"
+#: twitter-anywhere-plus.php:263
+msgid "Top-Left"
 msgstr ""
 
-#: twitter-anywhere-plus.php:256
-msgid "Bottom"
+#: twitter-anywhere-plus.php:264
+msgid "Top-Right"
 msgstr ""
 
-#: twitter-anywhere-plus.php:273
+#: twitter-anywhere-plus.php:267
+msgid "Bottom-Left"
+msgstr ""
+
+#: twitter-anywhere-plus.php:268
+msgid "Bottom-Right"
+msgstr ""
+
+#: twitter-anywhere-plus.php:291
 msgid "Twitter bird:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:273
-#: twitter-anywhere-plus.php:294
+#: twitter-anywhere-plus.php:291
+#: twitter-anywhere-plus.php:319
 msgid "None"
 msgstr ""
 
-#: twitter-anywhere-plus.php:294
+#: twitter-anywhere-plus.php:319
 msgid "URL shortener:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:296
+#: twitter-anywhere-plus.php:322
 msgid "Username:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:296
+#: twitter-anywhere-plus.php:322
 msgid "API key:"
 msgstr ""
 
-#: twitter-anywhere-plus.php:297
+#: twitter-anywhere-plus.php:323
 #, php-format
-msgid "%1$sSign up for a bit.ly account%2$s. Once you register, you will find your API key %3$shere%2$s.<br />If you leave this blank, the plugin will use a default username and API key."
+msgid "In order to use this URL shortener, you must provide your own username and API key.<br />%1$sSign up for a bit.ly account%2$s. Once you register, you will find your API key %3$shere%2$s."
 msgstr ""
 
-#: twitter-anywhere-plus.php:307
+#: twitter-anywhere-plus.php:338
 msgid "Save changes"
 msgstr ""
 
-#: twitter-anywhere-plus.php:310
+#: twitter-anywhere-plus.php:341
 msgid "This plugin has been developed by <strong>GeekRMX</strong>."
 msgstr ""
 
-#: twitter-anywhere-plus.php:312
+#: twitter-anywhere-plus.php:343
 msgid "Website:"
 msgstr ""
 

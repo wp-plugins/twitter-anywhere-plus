@@ -92,7 +92,15 @@
   margin-bottom: -10px;
 }
 
-#lightdiv-button-div {
+#lightdiv-button-div-l {
+  float: left;
+  margin-right: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  clear: both;
+}
+
+#lightdiv-button-div-r {
   float: right;
   margin-left: 10px;
   margin-top: 3px;
